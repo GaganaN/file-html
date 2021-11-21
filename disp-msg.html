@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple button clicking example</title>
+    <style>
+        cite:hover{
+                color: blue;
+                cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <p>Display entered name</p>
+    <a><cite id="button">Click here</cite> for further action</a>
+    <h3 id="heading"></h3>
+
+    <a><cite id="button_B">click Here</cite> to know further</a>
+<h3 id="heading_B"></h3>
+    
+</body>
+<script>
+    const buttonA = document.querySelector('#button');
+const headingA = document.querySelector('#heading');
+
+buttonA.onclick = function() {
+  let name = prompt('Enter your name?');
+  alert('To see the result press on button ' + name );
+  headingA.textContent = 'Name you entered was ' + name;
+}
+
+const buttonB = document.querySelector('#button_B');
+const headingB = document.querySelector('#heading_B');
+
+buttonB.onclick = function() {
+    alert('Entered message was ' + prompt('Enter your message') );
+    headingB.textContent = '-' + prompt('enter your message again');
+}
+</script>
+</html>
