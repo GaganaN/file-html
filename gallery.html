@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple gallery</title>
+    <style>
+        body{
+            background-color: beige;
+        }
+        h1{
+            text-align: center;
+            color: black;
+            font-size: medium;
+            margin: auto;
+        }
+        .gallery{
+            width: 80%;
+            display: inline;
+            
+            margin: 100px auto 50px;
+            grid-gap: 10px;
+        }
+        .gallery img{
+            width: 200px;
+            height: 250px;
+            cursor: default;
+        }
+        
+        .gallery img:hover{
+            transform: scale(1.05);
+        }
+        .photo{
+            width: 100%;
+            height: 100vh;
+            background-color: black;
+            position: fixed;
+            bottom: 0;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+        .photo img{
+            width:50%;
+            max-width: 500px;
+        }
+        .photo span{
+            position: absolute;
+            top: 5%;
+            right: 5%;
+            font-size: 20px;
+            color: white;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>My gallery</h1>
+    <div class="photo" id="fullbox">
+        <img src="5th.jpeg" id="fullimg"/>
+        <span onclick="closefullimg()"> X </span>
+    </div>
+    
+    <div class="gallery">
+        <img src="5th.jpeg" onclick="openfullimg(this.src)"/>
+        <img src="10th.jpeg" onclick="openfullimg(this.src)"/>
+        <img src="15th.jpeg" onclick="openfullimg(this.src)"/>
+        <img src="2nd.jpeg" onclick="openfullimg(this.src)"/>
+        <img src="4th.jpeg" onclick="openfullimg(this.src)"/>
+        <img src="6th.jpeg" onclick="openfullimg(this.src)"/>
+        <img src="7th.jpeg" onclick="openfullimg(this.src)"/>
+        <img src="8th.jpeg" onclick="openfullimg(this.src)"/>
+        <img src="9th.jpeg" onclick="openfullimg(this.src)"/>       
+        <img src="12th.jpeg" onclick="openfullimg(this.src)"/>
+        <img src="13th.jpeg" onclick="openfullimg(this.src)"/>
+        <img src="14th.jpeg" onclick="openfullimg(this.src)"/>        
+        <img src="1st.jpeg" onclick="openfullimg(this.src)"/>
+        <img src="3rd.jpeg" onclick="openfullimg(this.src)"/>
+        <img src="11th.jpeg" onclick="openfullimg()"/>
+    </div>
+</body>
+<script>
+    let fullbox = document.getElementById("fullbox");
+    let fullimg = document.getElementById("fullimg");
+    
+    function openfullimg(pic){
+        fullbox.style.display = "flex";
+        fullimg.src=pic;
+    }
+    function closefullimg(){
+        fullbox.style.display = "none";
+    }
+</script>
+</html>
